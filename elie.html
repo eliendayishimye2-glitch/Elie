@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Elie#Outdoor Wellness</title>
+    <style>
+        :root {
+            --bg-color: #f0f8ff;
+            --text-color: #333;
+            --header-bg: #4CAF50;
+            --section-bg: #e0f7fa;
+            --button-bg: #4CAF50;
+            --button-text: #fff;
+        }
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #eee;
+            --header-bg: #1e1e1e;
+            --section-bg: #1e1e1e;
+            --button-bg: #333;
+            --button-text: #fff;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color);}
+        header { background-color: var(--header-bg); color: white; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
+        header nav ul { list-style: none; display: flex; justify-content: center; padding: 0; margin: 10px 0 0 0; flex-wrap: wrap; }
+        header nav ul li { margin: 0 15px; }
+        header nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+        #mode-toggle { position: absolute; right: 10px; top: 15px; padding: 5px 10px; cursor: pointer; }
+        section { padding: 20px; margin: 10px; background-color: var(--section-bg); border-radius: 10px; }
+        .img-section { width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; margin-top: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .grid img { width: 100%; border-radius: 10px; }
+        button { background-color: var(--button-bg); color: var(--button-text); border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; margin: 5px; }
+        button:hover { opacity: 0.8; }
+        footer { background-color: var(--header-bg); color: white; text-align: center; padding: 15px 0; margin-top: 20px; }
+        @media(max-width:600px){ header nav ul { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Elie# Outdoor Wellness</h1>
+        <button id="mode-toggle">🌙 Dark Elie</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#exercise">Exercises</a></li>
+                <li><a href="#nutrition">Nutrition</a></li>
+                <li><a href="#tracker">Tracker</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Outdoor Wellness</h2>
+            <p>Tips and routines to improve your outdoor lifestyle.</p>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Outdoor wellness" class="img-section">
+        </section>
+
+        <section id="exercise">
+            <h2>Outdoor Exercises</h2>
+            <div class="grid">
+                <div class="exercise-item">
+                    <img src="https://images.unsplash.com/photo-1554284126-1e0f5a5ad2e5?auto=format&fit=crop&w=800&q=60" alt="Morning Stretch">
+                    <p>Morning Stretch</p>
+                </div>
+                <div class="exercise-item">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=60" alt="Jogging">
+                    <p>Jogging Routine</p>
+                </div>
+                <div class="exercise-item">
+                    <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001e0?auto=format&fit=crop&w=800&q=60" alt="Yoga in park">
+                    <p>Yoga in the Park</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nutrition">
+            <h2>Healthy Nutrition</h2>
+            <div class="grid">
+                <div class="nutrition-item">
+                    <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e38e?auto=format&fit=crop&w=800&q=60" alt="Healthy Snacks">
+                    <p>Healthy Snacks: Fruits, nuts, energy bars</p>
+                </div>
+                <div class="nutrition-item">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60" alt="Hydration">
+                    <p>Stay Hydrated</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tracker">
+            <h2>Outdoor Tracker</h2>
+            <p>Track your outdoor time</p>
+            <button onclick="startTimer()">Start Timer</button>
+            <button onclick="stopTimer()">Stop Timer</button>
+            <p id="timer">0:00:00</p>
+        </section>
+
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <input type="text" id="city" placeholder="Enter city">
+            <button onclick="getWeather()">Check Weather</button>
+            <p id="weather-info">Weather info will appear here</p>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>This website helps you enjoy a healthier outdoor lifestyle.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Outdoor Wellness | Photos: <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
+    </footer>
+
+    <script>
+        // Timer
+        let seconds = 0;
+        let timer;
+        function startTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                seconds++;
+                document.getElementById("timer").textContent = formatTime(seconds);
+            }, 1000);
+        }
+        function stopTimer() { clearInterval(timer); }
+        function formatTime(sec) {
+            const hrs = Math.floor(sec / 3600);
+            const mins = Math.floor((sec % 3600) / 60);
+            const secs = sec % 60;
+            return `${hrs}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+        }
+
+        // Weather API
+        async function getWeather() {
+            const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace with your API key
+            const city = document.getElementById("city").value;
+            if(!city){ alert("Enter city"); return; }
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                if(data.cod===200){
+                    document.getElementById("weather-info").textContent = 
+                    `Weather in ${city}: ${data.weather[0].description}, Temp: ${data.main.temp}°C`;
+                } else {
+                    document.getElementById("weather-info").textContent = "City not found.";
+                }
+            } catch(err){ console.error(err); document.getElementById("weather-info").textContent="Error fetching weather."; }
+        }
+
+        // Dark/Light Mode
+        const modeBtn = document.getElementById("mode-toggle");
+        modeBtn.addEventListener("click", ()=>{
+            document.body.classList.toggle("dark");
+            modeBtn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+        });
+    </script>
+</body>
+</html>
