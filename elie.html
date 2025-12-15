@@ -1,166 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@Elie#Outdoor Wellness</title>
-    <style>
-        :root {
-            --bg-color: #f0f8ff;
-            --text-color: #333;
-            --header-bg: #4CAF50;
-            --section-bg: #e0f7fa;
-            --button-bg: #4CAF50;
-            --button-text: #fff;
-        }
-        body.dark {
-            --bg-color: #121212;
-            --text-color: #eee;
-            --header-bg: #1e1e1e;
-            --section-bg: #1e1e1e;
-            --button-bg: #333;
-            --button-text: #fff;
-        }
-        * { box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color);}
-        header { background-color: var(--header-bg); color: white; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
-        header nav ul { list-style: none; display: flex; justify-content: center; padding: 0; margin: 10px 0 0 0; flex-wrap: wrap; }
-        header nav ul li { margin: 0 15px; }
-        header nav ul li a { color: white; text-decoration: none; font-weight: bold; }
-        #mode-toggle { position: absolute; right: 10px; top: 15px; padding: 5px 10px; cursor: pointer; }
-        section { padding: 20px; margin: 10px; background-color: var(--section-bg); border-radius: 10px; }
-        .img-section { width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; margin-top: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .grid img { width: 100%; border-radius: 10px; }
-        button { background-color: var(--button-bg); color: var(--button-text); border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; margin: 5px; }
-        button:hover { opacity: 0.8; }
-        footer { background-color: var(--header-bg); color: white; text-align: center; padding: 15px 0; margin-top: 20px; }
-        @media(max-width:600px){ header nav ul { flex-direction: column; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elie@ Life Skills</title>
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; font-family: Arial, Helvetica, sans-serif; }
+  body { background: #f4f6f8; color: #333; line-height:1.6; }
+  header { background: linear-gradient(90deg,#0f2027,#203a43,#2c5364); color: #fff; padding: 20px; text-align:center; position: sticky; top:0; z-index:100;}
+  nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
+  nav a:hover { text-decoration: underline; }
+  main { padding: 20px; }
+  h1,h2 { text-align:center; margin-bottom:20px; color:#2c5364; }
+  .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+  .card { background:#fff; border-radius:20px; padding:20px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition: transform .3s; }
+  .card:hover { transform: translateY(-10px); }
+  .card img { width:100%; height:160px; object-fit:cover; border-radius:15px; }
+  footer { text-align:center; padding:20px; background:#203a43; color:#fff; margin-top:20px; }
+  button { padding:12px 25px; font-size:16px; border:none; border-radius:25px; background:#2c5364; color:#fff; cursor:pointer; margin-top:10px; }
+  button:hover { background:#203a43; }
+  form { max-width:500px; margin:0 auto; background:#fff; padding:25px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+  form input, form textarea { width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #ccc; }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Elie# Outdoor Wellness</h1>
-        <button id="mode-toggle">🌙 Dark Elie</button>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#exercise">Exercises</a></li>
-                <li><a href="#nutrition">Nutrition</a></li>
-                <li><a href="#tracker">Tracker</a></li>
-                <li><a href="#weather">Weather</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <h1>Elie@ Life Skills</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="elie.html">Life Skills</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <main>
-        <section id="home">
-            <h2>Welcome to Outdoor Wellness</h2>
-            <p>Tips and routines to improve your outdoor lifestyle.</p>
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Outdoor wellness" class="img-section">
-        </section>
+<main>
+  <section id="skills">
+    <h2>Essential Life Skills</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0" alt="Communication">
+        <h3>Communication</h3>
+        <p>Speak clearly and listen to others.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Financial Skills">
+        <h3>Financial Skills</h3>
+        <p>Save, budget, and invest wisely.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Technology">
+        <h3>Technology</h3>
+        <p>Use technology to grow and learn.</p>
+      </div>
+    </div>
+  </section>
 
-        <section id="exercise">
-            <h2>Outdoor Exercises</h2>
-            <div class="grid">
-                <div class="exercise-item">
-                    <img src="https://images.unsplash.com/photo-1554284126-1e0f5a5ad2e5?auto=format&fit=crop&w=800&q=60" alt="Morning Stretch">
-                    <p>Morning Stretch</p>
-                </div>
-                <div class="exercise-item">
-                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=60" alt="Jogging">
-                    <p>Jogging Routine</p>
-                </div>
-                <div class="exercise-item">
-                    <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001e0?auto=format&fit=crop&w=800&q=60" alt="Yoga in park">
-                    <p>Yoga in the Park</p>
-                </div>
-            </div>
-        </section>
+  <section id="about">
+    <h2>About This Page</h2>
+    <p style="max-width:700px;margin:auto;text-align:center">
+      This page is designed to complement the Life Skills website and provide detailed guidance for young people to thrive outside school.
+    </p>
+  </section>
 
-        <section id="nutrition">
-            <h2>Healthy Nutrition</h2>
-            <div class="grid">
-                <div class="nutrition-item">
-                    <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e38e?auto=format&fit=crop&w=800&q=60" alt="Healthy Snacks">
-                    <p>Healthy Snacks: Fruits, nuts, energy bars</p>
-                </div>
-                <div class="nutrition-item">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60" alt="Hydration">
-                    <p>Stay Hydrated</p>
-                </div>
-            </div>
-        </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return sendMessage()">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
 
-        <section id="tracker">
-            <h2>Outdoor Tracker</h2>
-            <p>Track your outdoor time</p>
-            <button onclick="startTimer()">Start Timer</button>
-            <button onclick="stopTimer()">Stop Timer</button>
-            <p id="timer">0:00:00</p>
-        </section>
+<footer>
+  <p>&copy; 2025 Life Skills Website | Designed by Elie</p>
+</footer>
 
-        <section id="weather">
-            <h2>Current Weather</h2>
-            <input type="text" id="city" placeholder="Enter city">
-            <button onclick="getWeather()">Check Weather</button>
-            <p id="weather-info">Weather info will appear here</p>
-        </section>
-
-        <section id="about">
-            <h2>About</h2>
-            <p>This website helps you enjoy a healthier outdoor lifestyle.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Outdoor Wellness | Photos: <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
-    </footer>
-
-    <script>
-        // Timer
-        let seconds = 0;
-        let timer;
-        function startTimer() {
-            clearInterval(timer);
-            timer = setInterval(() => {
-                seconds++;
-                document.getElementById("timer").textContent = formatTime(seconds);
-            }, 1000);
-        }
-        function stopTimer() { clearInterval(timer); }
-        function formatTime(sec) {
-            const hrs = Math.floor(sec / 3600);
-            const mins = Math.floor((sec % 3600) / 60);
-            const secs = sec % 60;
-            return `${hrs}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
-        }
-
-        // Weather API
-        async function getWeather() {
-            const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace with your API key
-            const city = document.getElementById("city").value;
-            if(!city){ alert("Enter city"); return; }
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-            try {
-                const res = await fetch(url);
-                const data = await res.json();
-                if(data.cod===200){
-                    document.getElementById("weather-info").textContent = 
-                    `Weather in ${city}: ${data.weather[0].description}, Temp: ${data.main.temp}°C`;
-                } else {
-                    document.getElementById("weather-info").textContent = "City not found.";
-                }
-            } catch(err){ console.error(err); document.getElementById("weather-info").textContent="Error fetching weather."; }
-        }
-
-        // Dark/Light Mode
-        const modeBtn = document.getElementById("mode-toggle");
-        modeBtn.addEventListener("click", ()=>{
-            document.body.classList.toggle("dark");
-            modeBtn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
-        });
-    </script>
+<script>
+function sendMessage(){
+  alert("Thank you for your message! We will contact you soon 😊");
+  return false;
+}
+</script>
 </body>
 </html>
+
